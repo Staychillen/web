@@ -1,0 +1,939 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'PT Sans', sans-serif;
+  line-height: 1.5;
+  background-color: rgb(241, 241, 241);
+
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Main colors */
+:root {
+    --mainBlue: #0D2149;
+    --mainRed: #cf0a0a;
+    /* --mainRed: #B3001B; */
+    --white: #F0F2EF;
+}
+
+/*global container */
+/* main containers*/
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+  }
+  
+  .inner-container {
+      padding: 2rem 2.5rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+      .inner-container {
+          padding: 1.5rem 1.5rem;
+      }
+  }
+  @media screen and (min-width: 487px) and (max-width: 767px) {
+      .inner-container {
+          padding: 1rem 1.5rem;
+      } 
+  }
+  @media screen and (max-width: 486px){
+      .inner-container {
+          padding:1rem;
+      } 
+  }
+
+  /* Main Buttons */
+.main-btn {
+
+    width: 120px;
+    height: 40px;
+    border: none;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    color: var(--white);
+    background-color: #cf0a0a;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-btn:hover {
+    background-color: var(--white);
+    color: var(--mainBlue);
+    font-weight: 600;
+}
+@media screen and (min-width: 487px) and (max-width: 767px) {
+    .main-btn {
+
+        width: 110px;
+        height: 35px;
+        font-size: 1.04rem;
+    
+    } 
+
+}
+@media screen and (max-width: 486px) {
+    .main-btn {
+
+        width: 110px;
+        height: 35px;
+        font-size: 1.04rem;
+    
+    } 
+
+}
+/* end of Main Buttons */
+
+/* main Section titles */
+.section-title-con {
+    padding: 1rem 0;
+    margin: auto;
+}
+.section-title-con h1 {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 1px;
+    /* color: var(--mainBlue); */
+    color: var(--white);
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .section-title-con h1 {
+        font-size: 2.8rem;
+
+    }
+}
+@media screen and (min-width: 487px) and (max-width: 767px) {
+    .section-title-con h1 {
+        font-size: 2.5rem;
+
+    }
+}
+@media screen and (max-width: 486px){
+    .section-title-con h1 {
+        font-size: 2rem;
+
+    }
+}
+
+/* Navbar header */
+/* Header */
+ header {
+    background-color: var(--mainBlue);
+    position: fixed;
+    z-index: 50;
+}
+
+.navbar-main {
+    display: flex;
+    width: 100%; 
+    /* padding: 1rem; */
+}
+
+
+.navbar-main .nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+.nav-bar .navbar-brand a{
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-style: italic;
+    letter-spacing: 0px;
+}
+.nav-bar .navbar-brand .red-text {
+    font-weight: 700;
+}
+.navbar-main .nav-bar ul {
+    display: flex;
+    flex-wrap:wrap;
+}
+.nav-bar ul li {
+    margin-left: 2rem;
+    padding: 1rem 0;
+    height: 60px;
+    transition: all 0.2s ease;
+   }
+
+
+
+.navbar-main .nav-bar ul li a {
+    font-size: 0.97rem;
+    display: inline-block;
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.navbar-main .nav-bar ul li:hover {
+    border-bottom: 4px solid var(--mainRed);
+}
+
+ .navbar-main .menu-btn {
+     display:none; 
+} 
+
+
+/* */
+@media only screen and (max-width: 767px){
+  
+   header {
+    position: static;
+
+   }
+
+    .navbar-main .menu-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        font-size: 26px;
+        display:block;
+        outline: none;
+        display: block;
+        background-color: transparent;
+        padding: 1rem 1.5rem;
+    } 
+    .navbar-main .menu-btn i {
+        color: var(--white);
+    }
+    .navbar-main{
+        width: 75%;
+        height:100%;
+        z-index: 20; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    
+    .navbar-main .nav-bar {
+        position: fixed;
+        left: -950px;
+        background-color: var(--mainBlue);
+        transition: 1s;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 2rem;
+        z-index: 40;
+    }
+    
+    .navbar-main.open-nav  .nav-bar{
+        width: 75%;
+        top: 0;
+        left: 0;
+        transition: left 0.5s;
+        height: 100%;
+    }
+    
+    .nav-bar .navbar-brand a{
+        color: var(--white);
+    }
+    .navbar-main.open-nav button.menu-btn i:before {
+        content: '\f00d ';
+        color: var(--white);
+    } 
+    
+    /* ############ */
+    .navbar-main .nav-bar ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .nav-bar ul li {
+        margin-left: 0;
+        padding: 1rem;
+        height: 60px;
+        transition: all 0.2s ease;
+       }
+    
+    
+    
+    .navbar-main .nav-bar ul li a {
+        font-size: 0.97rem;
+        color: var(--white);
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+    .navbar-main .nav-bar ul li a:hover {
+        color: var(--mainRed);
+    }
+    .navbar-main .nav-bar ul li:hover {
+        transform: scale(1.1);
+        border-bottom: none;
+    }
+    
+    }
+    /* end of header */
+
+    /*Hero section  */
+    #hero-sec {
+        width: 100%;
+        height: calc(100vh + 60px);
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.486), rgba(0, 0, 0, 0.774)), url('../img/hero-ball.jpg');
+        background-size: cover;
+        background-position: center;
+        
+    }
+    .hero-content {
+        width: 100%;
+        height: calc(100vh + 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        width: 900px;
+        max-width: 100%;
+        padding-bottom: 4rem;
+
+    }
+    .hero-content .hero-title {
+        font-size: 4.7rem;
+        line-height: 1;
+        letter-spacing: 3px;
+        text-transform: capitalize;
+    }
+    .red-text {
+        /* color: var(--mainRed); */
+        color: #cf0a0a;
+    }
+    .hero-para {
+        max-width: 650px;
+        margin: 1.7rem 0 3rem;
+        font-size: 1rem;
+        color: var(--white);
+    }
+ 
+
+    /* About world cup */
+    #worldcup-sec {
+        width: 100%;
+        height: auto;
+        /* background-color: rgb(233, 233, 233); */
+        background-color: var(--mainBlue);
+        padding-bottom: 2rem;
+    }
+    #worldcup-sec .worldcup-content-container {
+        width: 100%;
+        height: 600px;
+        background-color: #051431;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0.842), rgba(5, 20, 51, 0.801)), url('../img/ground.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #0d2149fb;
+        display: flex;
+        overflow: hidden;
+    }
+.worldcup-content {
+    width: 50%;
+    height: auto;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.worldcup-content .content-title {
+color: var(--white);
+font-size: 2.4rem;
+font-weight: 600;
+text-transform: capitalize;
+}
+.worldcup-content  p {
+    margin: 3rem 0 4rem;
+    color: var(--white);
+}
+
+.worldcup-content-container  .worldcup-pic {
+    width: 50%;
+    background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0), rgba(5, 20, 51, 0)), url('../img/stadium.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+/* Who we are section */
+
+#who-we-sec {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0.842), rgba(5, 20, 51, 0.801)), url('../img/ground.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 2rem;
+}
+#who-we-sec .who-we-content-container {
+    width: 100%;
+    height: 500px;
+    background-color: var(--mainBlue);
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    display: flex;
+    overflow: hidden;
+}
+.who-we-content-container .team-pic {
+    width: 60%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0), rgba(133, 6, 6, 0.26)), url('../img/team.jpg');
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 1%, 100% 0%, 75% 100%, 0% 100%);
+}
+.who-we-content-container .who-we-content {
+    width: 50%;
+    height: auto;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.who-we-content .content-title {
+color: var(--white);
+font-size: 2.4rem;
+font-weight: 600;
+text-transform: capitalize;
+}
+.who-we-content  p {
+    margin: 3rem 0 4rem;
+    color: var(--white);
+}
+
+
+/* Fan club */
+  #fanclub {
+    width: 100%;
+    height: auto;
+    background-color: var(--mainBlue);
+    padding-bottom: 2rem;
+  }
+  #fanclub .fanclub-container {
+    width: 100%;
+    height: 500px;
+    background-image: linear-gradient(to bottom, rgba(0, 65, 196, 0.418), rgba(0, 0, 0, 0.664)), url('../img/ground-banner.jpg');
+    background-position: center;
+    background-size: cover;
+    margin: 3rem 0 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .fanclub-container .banner-top-title {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .fanclub-container .banner-main-title {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1;
+    margin: 1.5rem auto 4rem;
+  }
+ 
+
+  /* Footer */
+  /* Footer */
+#footer {
+    width: 100%;
+    height: auto;
+    background-color: #021335;
+ 
+    padding: 3rem 0;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+.footer-container .navbar-brand a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.footer-container .navbar-brand p {
+    margin: 1rem 0;
+    color: var(--white);
+    font-size: 0.96rem;
+    text-transform: capitalize;
+}
+.navbar-brand .social-icon {
+    margin-top: 1rem;
+
+}
+.social-icon ul {
+    display: flex;
+    justify-content: flex-start;
+}
+.social-icon ul li {
+    margin-right: 1.5rem;
+}
+.social-icon ul li a span {
+    font-size: 1.2rem;
+    color: var(--white);
+    transition: all 0.2s ease;
+}
+.social-icon ul li a span:hover {
+color: var(--mainRed);
+}
+
+
+.first-link-container ul li a, .second-link-container ul li a{
+    display: block;
+color: rgb(218, 218, 218);
+margin-bottom: 0.3rem;
+font-size: 0.95rem;
+}
+.first-link-container ul li a:hover, .second-link-container ul li a:hover{
+
+color: var(--mainRed);
+transition: all 0.2s ease;
+
+}
+.address-container {
+   
+    color: rgb(245, 245, 245);
+}
+.link-title {
+    color: var(--mainRed);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+/* Copyrights */
+.copyright-section {
+    background-color: #000c24;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+}
+.copyright-section p {
+    font-size: 0.95rem;
+    color: rgb(218, 218, 218);
+}
+
+/* Footer media quries */
+@media screen and (min-width: 487px) and (max-width: 767px) {
+       /* Footer */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem ;
+    gap: 2rem;
+
+}
+.footer-container .navbar-brand {
+    margin-left: 2rem;
+}
+
+
+.footer-container .navbar-brand a{
+    font-weight: 700;
+
+}
+.first-link-container {
+    margin: auto;
+}
+
+.second-link-container  {
+    margin-left: 2rem;
+}
+.address-container {
+   text-transform: capitalize;
+   margin: auto;
+}
+
+.copyright-section p {
+    font-size: 0.93rem;
+
+}
+
+}
+
+@media screen and (max-width: 486px)  {
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 1rem ;
+        gap: 2rem;
+    
+    }
+    
+    .footer-container .navbar-brand a{
+        font-weight: 700;
+    
+    }
+    .first-link-container {
+        margin: auto;
+    }
+    
+    
+    .address-container {
+       text-transform: capitalize;
+       margin: auto;
+    }
+    
+    .copyright-section p {
+        font-size: 0.93rem;
+    
+    }
+}
+
+/* ############################## */
+/* Media quries tablet*/
+@media screen and (min-width: 768px) and (max-width: 991px){
+
+    .hero-content .hero-title {
+        font-size: 4.4rem;
+        line-height: 0.9;
+    }
+    .hero-para {
+        max-width: 500px;
+        margin: 1.7rem 0 2.5rem;
+        line-height: 1.2;
+    }
+
+
+        /* About world cup */
+        #worldcup-sec {
+   
+            padding-bottom: 1rem;
+        }
+        #worldcup-sec .worldcup-content-container {
+     
+            height: 550px;
+        }
+    .worldcup-content {
+       
+        padding: 2rem 1.5rem;
+
+    }
+    .worldcup-content .content-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    }
+    .worldcup-content  p {
+        margin: 3rem 0 3rem;
+        line-height: 1.4;
+    }
+#who-we-sec .who-we-content-container {
+
+    height: 450px;
+
+    margin: 1rem 0;
+
+}
+
+.who-we-content-container .who-we-content {
+    padding: 2rem 1rem;
+}
+
+
+.who-we-content .content-title {
+font-size: 2.2rem;
+}
+.who-we-content  p {
+    margin: 1.5rem 0 2.5rem;
+  
+}
+
+ 
+/* Fan club */
+#fanclub {
+    padding-bottom: 0rem;
+  }
+  #fanclub .fanclub-container {
+    height: 450px;
+    margin: 2rem 0 1rem;
+  }
+  .fanclub-container .banner-top-title {
+    font-size: 1.9rem;
+  }
+  .fanclub-container .banner-main-title {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 3.7rem;
+    text-align: center;
+    line-height: 1;
+    margin: 1.5rem auto 4rem;
+  }
+ 
+    
+    
+}
+
+@media screen and (min-width: 487px) and (max-width: 767px) {
+
+    .hero-content {
+        align-items: center;
+
+        margin: auto;
+        width: 700px;
+        max-width: 100%;
+        padding: 2.5rem 1rem 2rem;
+        text-align: center;
+
+    }
+    .hero-content .hero-title {
+        font-size: 3.2rem;
+        letter-spacing: 1px;
+    }
+    .hero-para {
+        max-width: 500px;
+        margin: 1.7rem 0 3rem;
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+
+        /* About world cup */
+        #worldcup-sec {
+            padding-bottom: 1.5rem;
+        }
+        #worldcup-sec .worldcup-content-container {
+            height: auto;
+
+            margin: 1.5rem 0;
+            flex-direction: column-reverse;
+   
+        }
+    .worldcup-content {
+        width: 100%;
+        height: 50%;
+        padding: 3rem 1rem;
+        text-align: center;
+
+    }
+    .worldcup-content .content-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    }
+    .worldcup-content  p {
+        margin: 3rem 0 4rem;
+        font-size: 0.95rem;
+    }
+     .worldcup-content  .main-btn {
+        margin: auto;
+     }
+    
+    .worldcup-content-container  .worldcup-pic {
+        width: 100%;
+        height: 500px;
+        
+    }
+
+    /* Who we are section */
+
+#who-we-sec {
+    padding-bottom: 1rem;
+}
+#who-we-sec .who-we-content-container {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+.who-we-content-container .team-pic {
+    width: 100%;
+    height: 450px;
+    clip-path: none;
+}
+.who-we-content-container .who-we-content {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+
+.who-we-content .content-title {
+font-size: 2.1rem;
+}
+.who-we-content  p {
+    margin: 2.5rem 0 4rem;
+    font-size: 0.95rem;
+}
+.who-we-content .main-btn {
+    margin: auto;
+}
+
+
+/* Fan club */
+  #fanclub {
+    padding-bottom: 1rem;
+  }
+  #fanclub .fanclub-container {
+
+    height: 400px;
+    margin: 2rem 0 1rem;
+  }
+  .fanclub-container .banner-top-title {
+    font-size: 1.7rem;
+  }
+  .fanclub-container .banner-main-title {
+    font-size: 3.4rem;
+    margin: 1rem auto 4rem;
+  }
+ 
+    
+}
+
+@media screen and (max-width: 486px) {
+    .hero-content {
+        align-items: center;
+
+        margin: auto;
+        width: 300px;
+        max-width: 100%;
+        padding: 2.5rem 1rem 2rem;
+        text-align: center;
+
+    }
+    .hero-content .hero-title {
+        font-size: 2.3rem;
+        letter-spacing: 1px;
+    }
+    .hero-para {
+        max-width: 300px;
+        margin: 1.7rem 0 3rem;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+
+        /* About world cup */
+        #worldcup-sec {
+            padding-bottom: 1.5rem;
+        }
+        #worldcup-sec .worldcup-content-container {
+            height: auto;
+
+            margin: 1.5rem 0;
+            flex-direction: column-reverse;
+   
+        }
+    .worldcup-content {
+        width: 100%;
+        height: 50%;
+        padding: 2rem 1rem 2.5rem;
+        text-align: center;
+
+    }
+    .worldcup-content .content-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    }
+    .worldcup-content  p {
+        margin: 2rem 0 2.5rem;
+        font-size: 0.9rem;
+    }
+     .worldcup-content  .main-btn {
+        margin: auto;
+     }
+    
+    .worldcup-content-container  .worldcup-pic {
+        width: 100%;
+        height: 500px;
+        
+    }
+
+    /* Who we are section */
+
+#who-we-sec {
+    padding-bottom: 0rem;
+}
+#who-we-sec .who-we-content-container {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+.who-we-content-container .team-pic {
+    width: 100%;
+    height: 300px;
+    clip-path: none;
+}
+.who-we-content-container .who-we-content {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+
+.who-we-content .content-title {
+font-size: 1.7rem;
+}
+.who-we-content  p {
+    margin: 2rem 0 2rem;
+    font-size: 0.9rem;
+}
+.who-we-content .main-btn {
+    margin: auto;
+}
+
+
+/* Fan club */
+  #fanclub {
+    padding-bottom: 1rem;
+  }
+  #fanclub .fanclub-container {
+
+    height: 300px;
+    margin: 2rem 0 1rem;
+  }
+  .fanclub-container .banner-top-title {
+    font-size: 1.4rem;
+  }
+  .fanclub-container .banner-main-title {
+    font-size: 2.2rem;
+    margin: 1rem auto 4rem;
+  }
+ 
+}

@@ -1,0 +1,944 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'PT Sans', sans-serif;
+  line-height: 1.5;
+  background-color: rgb(241, 241, 241);
+
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Main colors */
+:root {
+    --mainBlue: #0D2149;
+    --mainRed: #cf0a0a;
+    /* --mainRed: #B3001B; */
+    --white: #F0F2EF;
+}
+
+/*global container */
+/* main containers*/
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+  }
+  
+  .inner-container {
+      padding: 2rem 2.5rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+      .inner-container {
+          padding: 1.5rem 1.5rem;
+      }
+  }
+  @media screen and (min-width: 487px) and (max-width: 767px) {
+      .inner-container {
+          padding: 1rem 1.5rem;
+      } 
+  }
+  @media screen and (max-width: 486px){
+      .inner-container {
+          padding:1rem;
+      } 
+  }
+
+  /* Main Buttons */
+.main-btn {
+
+    width: 120px;
+    height: 40px;
+    border: none;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    color: var(--white);
+    background-color: #cf0a0a;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-btn:hover {
+    background-color: var(--white);
+    color: var(--mainBlue);
+    font-weight: 600;
+}
+@media screen and (min-width: 487px) and (max-width: 767px) {
+    .main-btn {
+
+        width: 110px;
+        height: 35px;
+        font-size: 1.04rem;
+    
+    } 
+
+}
+@media screen and (max-width: 486px) {
+    .main-btn {
+
+        width: 110px;
+        height: 35px;
+        font-size: 1.04rem;
+    
+    } 
+
+}
+/* end of Main Buttons */
+
+/* main Section titles */
+.section-title-con {
+    padding: 1rem 0;
+    margin: auto;
+}
+.section-title-con h1 {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 1px;
+    /* color: var(--mainBlue); */
+    color: var(--white);
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .section-title-con h1 {
+        font-size: 2.8rem;
+
+    }
+}
+@media screen and (min-width: 487px) and (max-width: 767px) {
+    .section-title-con h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+
+    }
+}
+@media screen and (max-width: 486px){
+    .section-title-con h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+
+    }
+}
+
+/* Navbar header */
+/* Header */
+header {
+    background-color: var(--mainBlue);
+    position: fixed;
+    z-index: 50;
+}
+
+.navbar-main {
+    display: flex;
+    width: 100%; 
+    /* padding: 1rem; */
+}
+
+
+.navbar-main .nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+.nav-bar .navbar-brand a{
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-style: italic;
+    letter-spacing: 0px;
+}
+.nav-bar .navbar-brand .red-text {
+    font-weight: 700;
+}
+.navbar-main .nav-bar ul {
+    display: flex;
+    flex-wrap:wrap;
+}
+.nav-bar ul li {
+    margin-left: 2rem;
+    padding: 1rem 0;
+    height: 60px;
+    transition: all 0.2s ease;
+   }
+
+
+
+.navbar-main .nav-bar ul li a {
+    font-size: 0.97rem;
+    display: inline-block;
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.navbar-main .nav-bar ul li:hover {
+    border-bottom: 4px solid var(--mainRed);
+}
+
+ .navbar-main .menu-btn {
+     display:none; 
+} 
+
+
+/* */
+@media only screen and (max-width: 767px){
+  
+   header {
+    position: static;
+   }
+
+    .navbar-main .menu-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        font-size: 26px;
+        display:block;
+        outline: none;
+        display: block;
+        background-color: transparent;
+        padding: 1rem 1.5rem;
+    } 
+    .navbar-main .menu-btn i {
+        color: var(--white);
+    }
+    .navbar-main{
+        width: 75%;
+        height:100%;
+        z-index: 20; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    
+    .navbar-main .nav-bar {
+        position: fixed;
+        left: -950px;
+        background-color: var(--mainBlue);
+        transition: 1s;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 2rem;
+        z-index: 40;
+    }
+    
+    .navbar-main.open-nav  .nav-bar{
+        width: 75%;
+        top: 0;
+        left: 0;
+        transition: left 0.5s;
+        height: 100%;
+    }
+    
+    .nav-bar .navbar-brand a{
+        color: var(--white);
+    }
+    .navbar-main.open-nav button.menu-btn i:before {
+        content: '\f00d ';
+        color: var(--white);
+    } 
+    
+    /* ############ */
+    .navbar-main .nav-bar ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .nav-bar ul li {
+        margin-left: 0;
+        padding: 1rem;
+        height: 60px;
+        transition: all 0.2s ease;
+       }
+    
+    
+    
+    .navbar-main .nav-bar ul li a {
+        font-size: 0.97rem;
+        color: var(--white);
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+    .navbar-main .nav-bar ul li a:hover {
+        color: var(--mainRed);
+    }
+    .navbar-main .nav-bar ul li:hover {
+        transform: scale(1.1);
+        border-bottom: none;
+    }
+    
+    }
+    /* end of header */
+
+/* History hero section */
+#history-hero {
+    width: 100%;
+    height: calc(100vh + 60px);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.616)), url('../img/history-ball.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#history-hero .history-content {
+        width: 100%;
+        height: calc(100vh + 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        max-width: 100%;
+        padding-bottom: 4rem;
+        text-align: center;
+}
+
+    .history-content .hero-title {
+        font-size: 4.7rem;
+        line-height: 1;
+        letter-spacing: 3px;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .red-text {
+        color: #cf0a0a;
+    }
+    .history-content .hero-para {
+        max-width: 650px;
+        margin: 1.7rem 0 3rem;
+        font-size: 1rem;
+        color: var(--white);
+        text-align: center;
+    }
+    .history-content .main-btn {
+        margin: 2rem auto 0 auto;
+    }
+
+
+/* About our history */
+        #our-history {
+            width: 100%;
+            height: auto;
+            /* background-color: rgb(233, 233, 233); */
+            background-color: var(--mainBlue);
+            padding-bottom: 2rem;
+        }
+        #our-history .our-history-content-container {
+            width: 100%;
+            height: 600px;
+            background-color: #051431;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0.842), rgba(5, 20, 51, 0.801)), url('../img/ground.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #0d2149fb;
+            display: flex;
+            overflow: hidden;
+        }
+    .our-history-content {
+        width: 50%;
+        height: auto;
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .our-history-content .content-title {
+    color: var(--white);
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 1.2;
+    }
+    .our-history-content  p {
+        margin: 3rem 0 4rem;
+        color: var(--white);
+    }
+    
+    .our-history-content-container .our-history-pic {
+        width: 50%;
+        background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0), rgba(0, 1, 3, 0.445)), url('../img/our-history-pic.jpg');
+        background-size: cover;
+        background-position: center;
+        
+    }
+
+
+    /* last worldcup section */
+
+#last-worldcups{
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0.678), rgba(5, 20, 51, 0.801)), url('../img/ground.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#last-worldcups .last-worldcups-container {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.last-worldcups-container .last-worldcups-item {
+    width: 100%;
+    height: auto;
+    background-color:#0d2149e1;
+    display: flex;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+   
+}
+.last-worldcups-item .item-pic {
+    width: 30%;
+    height: 300px;
+    background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0.685), rgba(0, 0, 0, 0.137)), url('../img/foot-ball.jpg');
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 1%, 100% 0%, 75% 100%, 0% 100%);
+}
+.last-worldcups-item .item-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+.last-worldcups-item .item-content .content-title {
+    margin: 0 1rem 1rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--white);
+}
+.last-worldcups-item .item-content p {
+    color: var(--white);
+    padding: 0 1rem 1rem;
+}
+
+
+.last-worldcups-item .item-content   p {
+        color: var(--white);
+    }
+
+/* Team ranikngs */
+#team-ranking {
+    width: 100%;
+    height: auto;
+   background-color: var(--mainBlue);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 2rem;
+}
+#team-ranking .team-ranking-table-container {
+    width: 100%;
+    height: 600px;
+    background-color: #051431;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    background-image: linear-gradient(to bottom, rgba(4, 18, 46, 0.726), rgba(5, 20, 51, 0.644)), url('../img/ground.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #0d2149fb;
+    overflow: hidden;
+    padding: 2rem 1rem;
+}
+
+.team-ranking-table-container .team-ranking-table {
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.team-ranking-table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    color: var(--white);
+
+}
+.team-ranking-table   th {
+    color:#e41f1f;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.team-ranking-table   th, td {
+    text-align: left;
+    padding: 16px;
+    text-align: center;
+  }
+  .team-ranking-table  tr:nth-child(odd) {
+    background-color:#051636;
+  }
+  .team-ranking-table  tr:nth-child(even) {
+    background-color:#0d2149b2;
+  }
+
+ /* Footer */
+  /* Footer */
+  #footer {
+    width: 100%;
+    height: auto;
+    background-color: #021335;
+ 
+    padding: 3rem 0;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+.footer-container .navbar-brand a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+.footer-container .navbar-brand p {
+    margin: 1rem 0;
+    color: var(--white);
+    font-size: 0.96rem;
+    text-transform: capitalize;
+}
+.navbar-brand .social-icon {
+    margin-top: 1rem;
+
+}
+.social-icon ul {
+    display: flex;
+    justify-content: flex-start;
+}
+.social-icon ul li {
+    margin-right: 1.5rem;
+}
+.social-icon ul li a span {
+    font-size: 1.2rem;
+    color: var(--white);
+    transition: all 0.2s ease;
+}
+.social-icon ul li a span:hover {
+color: var(--mainRed);
+}
+
+
+.first-link-container ul li a, .second-link-container ul li a{
+    display: block;
+color: rgb(218, 218, 218);
+margin-bottom: 0.3rem;
+font-size: 0.95rem;
+}
+.first-link-container ul li a:hover, .second-link-container ul li a:hover{
+
+color: var(--mainRed);
+transition: all 0.2s ease;
+
+}
+.address-container {
+   
+    color: rgb(245, 245, 245);
+}
+.link-title {
+    color: var(--mainRed);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+/* Copyrights */
+.copyright-section {
+    background-color: #000c24;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+}
+.copyright-section p {
+    font-size: 0.95rem;
+    color: rgb(218, 218, 218);
+}
+
+/* Footer media quries */
+@media screen and (min-width: 487px) and (max-width: 767px) {
+       /* Footer */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem ;
+    gap: 2rem;
+
+}
+.footer-container .navbar-brand {
+    margin-left: 2rem;
+}
+
+
+.footer-container .navbar-brand a{
+    font-weight: 700;
+
+}
+.first-link-container {
+    margin: auto;
+}
+
+.second-link-container  {
+    margin-left: 2rem;
+}
+.address-container {
+   text-transform: capitalize;
+   margin: auto;
+}
+
+.copyright-section p {
+    font-size: 0.93rem;
+
+}
+
+}
+
+@media screen and (max-width: 486px)  {
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 1rem ;
+        gap: 2rem;
+    
+    }
+    
+    .footer-container .navbar-brand a{
+        font-weight: 700;
+    
+    }
+    .first-link-container {
+        margin: auto;
+    }
+    
+    
+    .address-container {
+       text-transform: capitalize;
+       margin: auto;
+    }
+    
+    .copyright-section p {
+        font-size: 0.93rem;
+    
+    }
+}
+
+
+
+
+  /* Media quries  */
+  @media screen and (min-width: 769px) and (max-width: 992px){
+
+
+#history-hero .history-content {
+        max-width: 700px;
+        padding-bottom: 3.5rem;
+        margin: auto;
+}
+
+    .history-content .hero-title {
+        font-size: 3.9rem;
+        line-height: 1;
+        letter-spacing: 2px;
+    }
+
+    .history-content .main-btn {
+        margin: 1rem auto 0 auto;
+    }
+
+/* About our history */
+        #our-history {
+            padding-bottom: 1.5rem;
+        }
+        #our-history .our-history-content-container {
+            width: 100%;
+            height: 550px;
+        }
+    .our-history-content {
+ 
+        padding: 2rem 1rem 2rem 1.5rem;
+
+    }
+    .our-history-content .content-title {
+        font-size: 2.2rem;
+    line-height: 1.2;
+    }
+    .our-history-content  p {
+        margin: 1.5rem 0 3rem;
+    }
+
+    
+    .last-worldcups-item .item-pic {
+        width: 35%;
+        height: 250px;
+    }
+    .last-worldcups-item .item-content .content-title {
+        font-size: 1.6rem;
+    }
+
+    /* Team ranikngs */
+#team-ranking {
+    padding-bottom: 1rem;
+}
+#team-ranking .team-ranking-table-container {
+    height: auto;
+    padding: 2rem 2rem;
+}
+
+
+  }
+
+
+  @media screen and (min-width: 487px) and (max-width: 768px){
+
+    #history-hero .history-content {
+        max-width: 700px;
+        padding: 2rem 1rem 3rem;
+        margin: auto;
+}
+
+    .history-content .hero-title {
+        font-size: 3.2rem;
+        letter-spacing: 2px;
+    }
+    .history-content .hero-para {
+        max-width: 600px;
+        margin: 1.5rem 0 2rem;
+        font-size: 0.95rem;
+    }
+    .history-content .main-btn {
+        margin: 1rem auto 0 auto;
+    }
+
+
+    /* About our history */
+    #our-history {
+        padding-bottom: 1rem;
+    }
+    #our-history .our-history-content-container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+.our-history-content {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem 2rem 1.5rem;
+    text-align: center;
+
+}
+.our-history-content .content-title {
+    font-size: 2rem;
+line-height: 1.2;
+
+}
+.our-history-content  p {
+    font-size: 0.95rem;
+    margin: 1.5rem 0 3rem;
+}
+.our-history-content .main-btn {
+    margin: auto;
+}
+.our-history-content-container .our-history-pic {
+    width: 100%;
+    height: 350px;
+} 
+
+
+.last-worldcups-item .item-pic {
+    width: 0%;
+    height: auto;
+}
+.last-worldcups-item .item-content {
+    padding: 1.5rem 1rem;
+}
+.last-worldcups-item .item-content .content-title {
+    margin: 0 1rem 1rem;
+    font-size: 1.6rem;
+}
+.last-worldcups-item .item-content p {
+    font-size: 0.95rem;
+}
+    /* Team ranikngs */
+    #team-ranking {
+        padding-bottom: 1rem;
+    }
+    #team-ranking .team-ranking-table-container {
+        height: auto;
+        padding: 2rem 2rem;
+    }
+    
+  }
+
+  
+  @media screen and (max-width: 486px){
+    #history-hero .history-content {
+        max-width: 400px;
+        padding: 2rem 1rem 3rem;
+        margin: auto;
+}
+
+    .history-content .hero-title {
+        font-size: 2.1rem;
+        letter-spacing: 2px;
+    }
+    .history-content .hero-para {
+        max-width: 400px;
+        margin: 1.5rem 0 2rem;
+        font-size: 0.9rem;
+    }
+    .history-content .main-btn {
+        margin: 1rem auto 0 auto;
+    }
+
+        /* About our history */
+        #our-history {
+            padding-bottom: 1rem;
+        }
+        #our-history .our-history-content-container {
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+    .our-history-content {
+        width: 100%;
+        /* height: 300px; */
+        padding: 2rem 1rem 2rem 1rem;
+        text-align: center;
+    
+    }
+    .our-history-content .content-title {
+        font-size: 1.5rem;
+    line-height: 1.1;
+    
+    }
+    .our-history-content  p {
+        font-size: 0.9rem;
+        margin: 1rem 0 2rem;
+    }
+    .our-history-content .main-btn {
+        margin: auto;
+    }
+    .our-history-content-container .our-history-pic {
+        width: 100%;
+        height: 250px;
+    } 
+
+        /* About our history */
+        #our-history {
+            padding-bottom: 1rem;
+        }
+        #our-history .our-history-content-container {
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+    .our-history-content {
+        width: 100%;
+        height: auto;
+        padding: 2rem 1rem 2rem 1.5rem;
+        text-align: center;
+    
+    }
+    .our-history-content .content-title {
+        font-size: 2rem;
+    line-height: 1.2;
+    
+    }
+    .our-history-content  p {
+        font-size: 0.95rem;
+        margin: 1.5rem 0 3rem;
+    }
+    .our-history-content .main-btn {
+        margin: auto;
+    }
+    .our-history-content-container .our-history-pic {
+        width: 100%;
+        height: 350px;
+    } 
+    
+    .last-worldcups-item  {
+        height: auto;
+    }
+    
+    .last-worldcups-item .item-pic {
+        width: 0%;
+        height: auto;
+    }
+    .last-worldcups-item .item-content {
+        padding: 1rem 0.5rem;
+        text-align: center;
+    }
+    .last-worldcups-item .item-content .content-title {
+        margin: 0 0 1rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+    
+    .last-worldcups-item .item-content p {
+        font-size: 0.9rem;
+    }
+
+
+    /* Team ranikngs */
+#team-ranking {
+    padding-bottom: 0rem;
+}
+#team-ranking .team-ranking-table-container {
+
+    height: auto;
+
+    padding: 1rem 0;
+}
+
+.team-ranking-table-container .team-ranking-table {
+    padding: 2rem 0;
+}
+
+.team-ranking-table   th {
+    font-size: 1.1rem;
+
+}
+.team-ranking-table   th, td {
+    padding: 14px;
+
+  }
+  }
+
+  
